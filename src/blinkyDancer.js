@@ -1,3 +1,4 @@
+/*
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 
@@ -16,4 +17,17 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   };
 
   return blinkyDancer;
+};
+*/
+
+// pseudoclassical instantiation
+var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  makeDancer.call(this, top, left, timeBetweenSteps);
+};
+makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+makeBlinkyDancer.prototype.step = function() {
+  // call oldStep
+  makeDancer.prototype.step.call(this);
+  this.$node.toggle();
 };
