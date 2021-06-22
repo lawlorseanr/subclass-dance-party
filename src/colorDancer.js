@@ -1,9 +1,11 @@
 // pseudoclassical instantiation
 var makeColorDancer = function(top, left, timeBetweenSteps) {
+  makeBlinkyDancer.call(this, top, left, timeBetweenSteps);
+
   this.colorArray = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
   this.color = this.colorArray[0];
 
-  makeBlinkyDancer.call(this, top, left, timeBetweenSteps);
+  // makeBlinkyDancer.call(this, top, left, timeBetweenSteps);
 
   this.randomColor();
 };

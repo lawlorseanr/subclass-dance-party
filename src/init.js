@@ -24,9 +24,19 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 200
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+    dancer.step();
+  });
+
+  $('.lineupButton').on('click', function(event) {
+    var minTop = 20;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp(minTop);
+      minTop += 20;
+    }
   });
 });
 
