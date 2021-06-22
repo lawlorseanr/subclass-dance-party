@@ -12,7 +12,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.line = 0;
 
   this.minTop = 0;
-  this.maxTop = $('body').height() - 40;
+  this.maxTop = $('body').height() - 150;
 
   //this.step();
   this.setPosition(top, left);
@@ -38,8 +38,8 @@ makeDancer.prototype.setPosition = function(top, left) {
   } else if (this.top <= this.minTop) {
     this.top = this.minTop;
   }
-  if (this.left > ($('body').width() - 40)) {
-    this.left = $('body').width() - 40;
+  if (this.left > ($('body').width() - 150)) {
+    this.left = $('body').width() - 150;
   } else if (this.left <= 0) {
     this.left = 0;
   }

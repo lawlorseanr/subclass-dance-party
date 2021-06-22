@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image: url('img/background.jpg');
+  background-image: url('img/background.png');
   background-repeat: no-repeat;
   font-size: 18px;
 }
@@ -28,8 +28,11 @@ body, a:link, a:visited, a:active{
 }
 
 .spinner {
+  content: url('img/spongebob.png');
+  width: 50px;
+  height: auto;
   animation-name: spin;
-  animation-duration: 500ms;
+  animation-duration: 2500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
