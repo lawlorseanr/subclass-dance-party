@@ -51,3 +51,10 @@ body, a:link, a:visited, a:active{
   height: 50px;
   position:absolute;
 }
+
+.chaser {
+  content: url('img/krabs.png');
+  border: 0px;
+  height: 200px;
+  position:absolute;
+}

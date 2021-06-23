@@ -22,10 +22,14 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    var timeBetweenSteps = 150;
+    if (dancerMakerFunction === ChaseDancer) {
+      timeBetweenSteps = 25;
+    }
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 200
+      50 + Math.random() * timeBetweenSteps
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
@@ -45,6 +49,11 @@ $(document).ready(function() {
     mouseLeft = e.pageX + 20;
     if (newMoney !== undefined) {
       newMoney.setPosition(mouseTop, mouseLeft);
+      for (var i = 0; i < window.dancers.length; i++) {
+        if (window.dancers[i] instanceof ChaseDancer) {
+          window.dancers[i].updateTarget(mouseTop, mouseLeft);
+        }
+      }
     }
     //console.log(mouseTop, mouseLeft);
   }).mouseover();
