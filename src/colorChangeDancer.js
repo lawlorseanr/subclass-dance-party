@@ -20,5 +20,4 @@ makeColorChangeDancer.prototype.step = function() {
 
   this.colorCounter++;
   this.color = this.colorArray[this.colorCounter % this.colorArray.length];
-
 };

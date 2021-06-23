@@ -12,7 +12,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.line = 0;
 
   this.minTop = 0;
-  this.maxTop = $('body').height() - 150;
+  this.maxTop = $('body').height() - 200;
 
   //this.step();
   this.setPosition(top, left);

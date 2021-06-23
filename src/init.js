@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  var newMoney, mouseTop, mouseLeft;
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -38,5 +39,18 @@ $(document).ready(function() {
       minTop += 20;
     }
   });
+
+  $(document).mousemove(function(e) {
+    mouseTop = e.pageY + 20;
+    mouseLeft = e.pageX + 20;
+    if (newMoney !== undefined) {
+      newMoney.setPosition(mouseTop, mouseLeft);
+    }
+    //console.log(mouseTop, mouseLeft);
+  }).mouseover();
+
+  var newMoney = new Money(100, 100);
+  $('body').append(newMoney.$node);
+
 });
 
