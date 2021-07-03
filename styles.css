@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('img/background.png');
+  background-repeat: no-repeat;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -23,5 +24,37 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
+  position:absolute;
+}
+
+.spinner {
+  content: url('img/spongebob.png');
+  width: 50px;
+  height: auto;
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.money {
+  content: url('img/money.png');
+  height: 50px;
+  position:absolute;
+}
+
+.chaser {
+  content: url('img/krabs.png');
+  border: 0px;
+  height: 200px;
   position:absolute;
 }

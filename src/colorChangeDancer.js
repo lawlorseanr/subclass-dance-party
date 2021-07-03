@@ -13,11 +13,11 @@ makeColorChangeDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 
   var styleSyntax = {
-    'border-color': this.color
+    'border-color': this.color,
+    'background-color': this.color
   };
   this.$node.css(styleSyntax);
 
   this.colorCounter++;
   this.color = this.colorArray[this.colorCounter % this.colorArray.length];
-
 };
